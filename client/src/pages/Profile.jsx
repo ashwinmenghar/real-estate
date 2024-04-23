@@ -155,7 +155,7 @@ export default function Profile() {
     }
   };
   return (
-    <div className="p-3 max-w-lg mx-auto">
+    <div className="p-3 max-w-lg mx-auto h-screen">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
@@ -236,16 +236,16 @@ export default function Profile() {
       <p className="text-green-700 mt-5">
         {updateSuccess ? "User is updated successfully!" : ""}
       </p>
-      <button
-        onClick={handleShowListings}
-        className="text-green-700 w-full"
-      >
+      <button onClick={handleShowListings} className="text-green-700 w-full">
         Show Listings
       </button>
       <p className="text-red-700 mt-5">
         {showListingsError ? "Error showing listings" : ""}
       </p>
 
+      {userListings.length === 0 && !showListingsError && (
+        <h6 className="text-center text-xl font-semibold">No Listing Found</h6>
+      )}
       {userListings && userListings.length > 0 && (
         <div className="flex flex-col gap-4">
           <h1 className="text-center mt-7 text-2xl font-semibold">

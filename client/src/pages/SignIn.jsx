@@ -49,7 +49,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className="p-3 max-w-lg mx-auto">
+    <div className="p-3 max-w-lg mx-auto h-screen">
       <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
@@ -72,7 +72,7 @@ export default function SignIn() {
         >
           {loading == true ? "Loading..." : "Sign In"}
         </button>
-        <OAuth/>
+        <OAuth />
       </form>
       {error && <p className="text-red-500 mt-5">{error}</p>}
       <div className="flex gap-2 mt-5">
